@@ -15,7 +15,7 @@ void ui_init(void) {
 }
 
 // User MUST call `init_screen_stack()` before the first call to this function.
-void push_ui_callback(char *title, string_generation_callback cb, void *data) {
+void push_ui_callback(char *title, string_generation_callback cb, const void *data) {
     if (global.dynamic_display.formatter_index + 1 >= MAX_SCREEN_STACK_SIZE) {
         THROW(0x6124);
     }

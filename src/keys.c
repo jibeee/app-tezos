@@ -103,7 +103,7 @@ int crypto_init_public_key(derivation_type_t const derivation_type,
 
     // If we're using the old curve, make sure to adjust accordingly.
     if (cx_curve == CX_CURVE_Ed25519) {
-        cx_edward_compress_point(CX_CURVE_Ed25519, public_key->W, public_key->W_len);
+        cx_edwards_compress_point(CX_CURVE_Ed25519, public_key->W, public_key->W_len);
         public_key->W_len = 33;
     }
 

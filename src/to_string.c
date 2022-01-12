@@ -46,7 +46,7 @@ void lookup_parsed_contract_name(char *const buff,
     for (uint16_t i = 0; i < sizeof(named_delegates) / sizeof(named_delegate_t); i++) {
         if (memcmp(named_delegates[i].bakerAccount, buff, HASH_SIZE_B58) == 0) {
             // Found a matching baker, display it.
-            const char *name = (const char *) pic((unsigned int) named_delegates[i].bakerName);
+            const char *name = (const char *) pic(named_delegates[i].bakerName);
             if (buff_size <= strlen(name)) THROW(EXC_WRONG_LENGTH);
             strcpy(buff, name);
             return;
